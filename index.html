@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/challenge6.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jumbotron text-center bg-info">
+        <h1 class="heading text-warning">Let's Forecast!</h1>
+        <p class="sub-heading">Enter a city name to see what the weather is like today, and what it will be like going forward.</p>
+    </div>
+    <div class="contain my-2 ml-1 row">
+        <div class="card w-25 h-25 border border-dark">
+            <div class="card-title text-center m-0 py-1 border-bottom border-dark">
+                <h4>Pick a Place</h4>
+            </div>
+            <div class="card-body text-center m-0">
+                <input class="w-100" type="text" id="city-name">
+                <br>
+                <button id="search-btn" class="w-100 border-light rounded bg-info text-light my-1">Search</button>
+                <hr>
+                <ul class="m-auto">
+                    <li id="btn-list" class="p-1 btn-list">
+                        
+                    </li>
+                    <li id="btn-list" class="p-1 btn-list">
+                        
+                    </li>
+                    <li id="btn-list" class="p-1 btn-list">
+                        
+                    </li>
+                    <li id="btn-list" class="p-1 btn-list">
+                        
+                    </li>
+                    <li id="btn-list" class="p-1 btn-list">
+                        
+                    </li>
+                    <li id="btn-list" class="p-1 btn-list">
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card w-25 h-25 border border-light ml-2 bg-info text-light">
+            <div class="card-title text-center py-1 border-bottom border-light">
+                <h4 id="currentDay">Today</h4>
+            </div>
+            <div class="card-body d-flex align-items-center justify-content-between flex-column">
+                <img class="align-self-start current-day-img" src="https://www.pngall.com/wp-content/uploads/11/Weather-No-Background.png" alt="cloudy and sunny">
+                <div id="weather-stats" class="w-100 d-flex flex-column justify-content-center">
+                    <div class="temp wind w-100 d-flex flex-row justify-content-center">
+                        <p>Temp: <span id='temp'></span></p>
+                        <p>Wind: <span id="wind"></span></p>
+                    </div>
+                    <div class="humid UV w-100 d-flex flex-row justify-content-center">
+                        <p>Humidity: <span id="humidity"></span></p>
+                        <p>Feels Like: <span id="feelsLike"></span></p>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <div class="card d-flex custom-card ml-2 p-2">
+            <div class="card cust-flex bg-dark text-light my-1">
+                    <div class="card-title text-light p-1">
+                        <h5 id="dayOne">Next day <span id="weather-icon">☀️</span></h5>
+                    </div>
+                    <div class="card-body py-0 d-flex flex-column m-0">
+                        <div class="w-50 d-flex justify-content-between">
+                            <p>Temp-high: <span class="temp-high" id="temp-high"></span></p>
+                            <p>Temp-low: <span id="temp-low"></span> </p>
+                        </div>
+                        <div class="w-50 d-flex justify-content-between">
+                            <p>Wind: <span id="next-wind"></span> </p>
+                            <p>Humidity: <span id="next-humidity"></span> </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="card cust-flex bg-dark text-light my-1">
+                    <div class="card-title m-0 text-light p-1">
+                        <h5 id="dayTwo">Next day <span id="weather-icon">☀️</span></h5>
+                    </div>
+                    <div class="card-body py-0 d-flex flex-column m-0">
+                        <div class="w-50 d-flex justify-content-between">
+                            <p>Temp-high: <span class="temp-high" id="temp-high"></span></p>
+                            <p>Temp-low: <span id="temp-low"></span></p>
+                        </div>
+                        <div class="w-50 d-flex justify-content-between">
+                            <p>Wind: <span id="next-wind"></span> </p>
+                            <p>Humidity: <span id="next-humidity"></span> </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="card cust-flex bg-dark text-light my-1">
+                    <div class="card-title m-0 text-light p-1">
+                        <h5 id="dayThree">Next day <span id="weather-icon">☀️</span></h5>
+                    </div>
+                    <div class="card-body py-0 d-flex flex-column m-0">
+                        <div class="w-50 d-flex justify-content-between">
+                            <p>Temp-high: <span class="temp-high"></span></p>
+                            <p>Temp-low: <span id="temp-low"></span></p>
+                        </div>
+                        <div class="w-50 d-flex justify-content-between">
+                            <p>Wind: <span id="next-wind"></span> </p>
+                            <p>Humidity: <span id="next-humidity"></span> </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="card cust-flex bg-dark text-light my-1">
+                    <div class="card-title m-0 text-light p-1">
+                        <h5 id="dayFour">Next day <span id="weather-icon">☀️</span></h5>
+                    </div>
+                    <div class="card-body py-0 d-flex flex-column m-0">
+                        <div class="w-50 d-flex justify-content-between">
+                            <p>Temp-high: <span class="temp-high"></span></p>
+                            <p>Temp-low: <span id="temp-low"></span></p>
+                        </div>
+                        <div class="w-50 d-flex justify-content-between">
+                            <p>Wind: <span id="next-wind"></span> </p>
+                            <p>Humidity: <span id="next-humidity"></span> </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="card cust-flex bg-dark text-light my-1">
+                    <div class="card-title m-0 text-light p-1">
+                        <h5 id="dayFive">Next day <span id="weather-icon">☀️</span></h5>
+                    </div>
+                    <div class="card-body py-0 d-flex flex-column m-0">
+                        <div class="w-50 d-flex justify-content-between">
+                            <p>Temp-high: <span class="temp-high"></span></p>
+                            <p>Temp-low: <span id="temp-low"></span></p>
+                        </div>
+                        <div class="w-50 d-flex justify-content-between">
+                            <p>Wind: <span id="next-wind"></span> </p>
+                            <p>Humidity: <span id="next-humidity"></span> </p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/jsChallenge6.js"></script>
+</body>
+</html>

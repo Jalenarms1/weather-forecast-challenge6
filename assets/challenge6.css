@@ -1,0 +1,20 @@
+*{
+    margin:0;
+    padding:0;
+}
+ul{
+    list-style: none;
+}
+.next-days{
+    width:100px; height: 125px;
+}
+.current-day-img{
+    height:150px; 
+    width:175px;
+}
+#weather-stats p{
+    flex: 0 0 50%;
+}
+.custom-card{
+    width:40%;
+}
