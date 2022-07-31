@@ -16,12 +16,6 @@ var storeCities = [];
 
 // w-100 bg-info border border-dark rounded p-1 created buttons class to add  
 
-for(i = 0;i < tempHighEl.length;i++){
-    tempHighEl.addClass("temp-high-" + i);
-    console.log(tempHighEl[i]);
-
-} 
-
 function nextFiveWeather(user){
     var weatherURL = 'https://api.openweathermap.org/data/2.5/forecast?q='+user+'&units=imperial&appid=ec5c7380ad1c206f8903e05d34e299ad';
     $.ajax({
