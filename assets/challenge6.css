@@ -21,3 +21,16 @@ ul{
 h5::after{
     content: "⛅️"
 }
+
+@media screen and (max-width: 860px){
+    .contain{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+    .m-query{
+        min-width: 75%;
+        margin: 2% 0;
+    }
+    .
+}

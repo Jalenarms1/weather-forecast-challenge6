@@ -126,7 +126,7 @@ function creatButtons(cityName){
         saveCities();
     } return storeCities
     
-}
+} 
 
 if(storeCities != null){
     var gotDown = JSON.parse(localStorage.getItem("previous"));
