@@ -13,6 +13,8 @@ var nextWindEl = $(".next-wind");
 var nextHumidity = $(".next-humidity");
 var prevCityBtn = document.querySelectorAll(".prev-city");
 var storeCities = [];
+var currentSearch = [];
+var storage = [];
 
 // w-100 bg-info border border-dark rounded p-1 created buttons class to add  
 
@@ -108,32 +110,37 @@ function prevSearchCall(event){
 }
 
 function creatButtons(cityName){
-    var previousCities = [];
+    var newBtn = $("<button>");
+    newBtn.addClass("w-100 bg-info border border-dark rounded p-1 my-1 prev-city");
+    newBtn.text(cityName);
+    btnList.append(newBtn); 
 
-    previousCities.push(cityName);
-    for(i = 0;i < previousCities.length;i++){
-        var newBtn = $("<button>");
-        newBtn.addClass("w-100 bg-info border border-dark rounded p-1 my-1 prev-city");
-        newBtn.text(previousCities[i]);
-        btnList.append(newBtn); 
-        storeCities.push(previousCities);
-        saveCities();
-    } return storeCities
+    storeCities.push(cityName);
+    
+    saveCities();
     
 } 
 
-if(storeCities != null){
-    var gotDown = JSON.parse(localStorage.getItem("previous"));
+var gotDown = JSON.parse(localStorage.getItem("previous"));
+console.log(gotDown)
+if(gotDown != null){
+    gotDown.forEach(item => {
+        storeCities.push(item);
+    
+    })
 }
+
+
+console.log(storeCities);
 
 console.log(gotDown);
 function displaySavedCities(){
-    console.log(gotDown);
-    if(gotDown != null){
-        for(i = 0;i < gotDown.length;i++){
+    
+    if(storeCities != null){
+        for(i = 0;i < storeCities.length;i++){
             var newBtnEl = $("<button>");
             newBtnEl.addClass("w-100 bg-info border border-dark rounded p-1 my-1 prev-city");
-            newBtnEl.text(gotDown[i]);
+            newBtnEl.text(storeCities[i]);
             btnList.append(newBtnEl);
         }
     }
@@ -143,7 +150,10 @@ function displaySavedCities(){
 displaySavedCities();
 
 function saveCities(){
-    localStorage.setItem("previous", JSON.stringify(storeCities));
+    if(storeCities != null){
+        localStorage.setItem("previous", JSON.stringify(storeCities));
+
+    }
 
     console.log(storeCities);
 }
